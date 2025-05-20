@@ -6,3 +6,5 @@ MongoDB, with a clean and responsive design. The aim is to offer a marketplace t
 creativity, simplicity, and usability. 
 
 ## FIGMA : https://www.figma.com/design/7ZPXHwc5F6gF1mTfdaHjTp/CraftsCircle?node-id=0-1&t=ev9QhXqtDBgFneDl-1
+
+**##TimeLine : https://docs.google.com/spreadsheets/d/1NF-viacpnJUrgjAdHjS5aApGf-ks2N6Rz_bQrb0PXUY/edit?usp=sharing**
