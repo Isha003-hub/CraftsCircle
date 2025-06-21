@@ -6,8 +6,22 @@ require('dotenv').config();
 
 const app = express();
 
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://crafts-circle.vercel.app/'
+];
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://crafts-circle.vercel.app/'], //vercel app URL
+  origin: function (origin, callback) {
+    
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('CORS not allowed for this origin: ' + origin));
+    }
+  },
   credentials: true
 }));
 
@@ -16,23 +30,21 @@ app.use(cookieParser());
 
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('Mongo Error:', err));
+  .then(() => console.log(' MongoDB connected'))
+  .catch(err => console.error(' Mongo Error:', err));
 
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users'));
-app.use('/api/products', require('./routes/products')); 
+app.use('/api/products', require('./routes/products'));
 app.use('/api/carts', require('./routes/carts'));
 app.use('/api/wishlists', require('./routes/wishlists'));
 
 
+app.get('/', (req, res) => {
+  res.send(' CraftsCircle API is running...');
+});
+
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-
-app.get('/', (req, res) => {
-  res.send('CraftsCircle API is running...');
-});
+app.listen(PORT, () => console.log('Server running on port ${PORT}'));
