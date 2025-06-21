@@ -7,40 +7,33 @@ require('dotenv').config();
 const app = express();
 
 
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://crafts-circle.vercel.app/'
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('CORS not allowed for this origin: ' + origin));
-    }
-  },
+  origin: ['http://localhost:5173', 'https://crafts-circle.vercel.app'], //updated
   credentials: true
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
 
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log(' MongoDB connected'))
-  .catch(err => console.error(' Mongo Error:', err));
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('Mongo Error:', err));
 
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users'));
-app.use('/api/products', require('./routes/products'));
+app.use('/api/products', require('./routes/products')); 
 app.use('/api/carts', require('./routes/carts'));
 app.use('/api/wishlists', require('./routes/wishlists'));
 
 
 app.get('/', (req, res) => {
-  res.send(' CraftsCircle API is running...');
+  res.send('CraftsCircle API is running...');
 });
 
 
