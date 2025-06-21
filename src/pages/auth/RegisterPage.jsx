@@ -78,7 +78,7 @@ const RegisterPage = () => {
           onChange={handleChange}
           className="w-full border px-4 py-2 rounded"
         />
-        {/* 🔒 Role field removed from UI */}
+        {/* Role field removed from UI */}
         <Button type="submit" className="w-full" size="lg">
           Register
         </Button>
