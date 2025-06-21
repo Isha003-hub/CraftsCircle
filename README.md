@@ -11,4 +11,6 @@ creativity, simplicity, and usability.
 
 ## TimeSheet : https://docs.google.com/spreadsheets/d/1zov68L-AyQveNmJ8v4u0gN2kgCteWePhMurFzMp1u3w/edit?usp=sharing
 
+## CraftsCircle Demo Video Link : https://youtu.be/bxYO3LUt-lk?si=fRdYkyOtMb7JNSCa
+
 
