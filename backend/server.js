@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://crafts-circle-rght.vercel.app/'], //vercel app URL
+  origin: ['http://localhost:5173', 'https://crafts-circle.vercel.app/'], //vercel app URL
   credentials: true
 }));
 
