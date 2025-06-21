@@ -11,4 +11,4 @@ creativity, simplicity, and usability.
 
 ## TimeSheet : https://docs.google.com/spreadsheets/d/1zov68L-AyQveNmJ8v4u0gN2kgCteWePhMurFzMp1u3w/edit?usp=sharing
 
-## MentorMeeting : https://docs.google.com/document/d/1uZv5MViJ3XmouY2h_JtFuTcZYW2xGVRcx5MhvMiF77o/edit?usp=sharing
+
